@@ -25,4 +25,4 @@ print(stock_head_data)
 stock_list = soup.find('table',attrs={"class":"type_2"}).find('tbody').find_all('tr')
 for stock in stock_list:
     if len(stock)>1:
-        print(stock.get_text().split())   #split() : 입력받은 문자를 기준으로 배열에 저장하여 RETURN
+        print(stock.get_text().split())   #split() : 입력받은 문자를 기준으로 배열에 저장하여 RETURN 배열
