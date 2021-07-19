@@ -21,7 +21,7 @@
 		
 			
 			
-				<title>�ð��Ѿ� : ���̹� ����</title>
+				<title>시가총액 : 네이버 금융</title>
 			
 		
 	
@@ -49,12 +49,12 @@
         
 			
 		    
-		    	<meta property="og:title" content="�ð��Ѿ� : ���̹� ����"/>
+		    	<meta property="og:title" content="시가총액 : 네이버 금융"/>
 		     
 		
 		
 			
-			   <meta property="og:description" content="���������� �ǽð� �ְ��� ���� ������ Ȯ���ϴ� ��"/>
+			   <meta property="og:description" content="관심종목의 실시간 주가를 가장 빠르게 확인하는 곳"/>
 		    
 		    
 		
@@ -68,7 +68,7 @@
 
 <meta property="og:type" content="article"/>
 <meta property="og:article:thumbnailUrl" content=""/>
-<meta property="og:article:author" content="���̹�����"/>
+<meta property="og:article:author" content="네이버금융"/>
 <meta property="og:article:author:url" content="http://FINANCE.NAVER.COM"/>
 
 
@@ -104,7 +104,7 @@
 		
 	
 
-	<!-- smart channel ���� -->
+	<!-- smart channel 광고 -->
 	<script async src="https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js">
 		</script>
 	<script type="text/javascript">
@@ -137,7 +137,7 @@
                     //console.log(gladsdk.event.AD_IMPRESSED);
                 });
                 gladsdk.addEventListener(gladsdk.event.ERROR, function(ad, error) {
-                    //TODO: ���� �α�ó��
+                    //TODO: 오류 로깅처리
                     //console.log(gladsdk.event.ERROR);
                 });
             });
@@ -210,9 +210,9 @@ var ccsrv="cc.naver.com";
 	
 
 
-var gnb_logout=document.URL; //GNB���� �α׾ƿ� �� redirect �� URL
-var gnb_searchbox='off'; //�̴� �˻�â�� on ���� off ����. default�� off
-var gnb_shortnick='off'; //�г��� ������(10��)�� on���� off ����. default�� off.
+var gnb_logout=document.URL; //GNB에서 로그아웃 후 redirect 될 URL
+var gnb_searchbox='off'; //미니 검색창을 on 할지 off 할지. default는 off
+var gnb_shortnick='off'; //닉네임 말줄임(10자)을 on할지 off 할지. default는 off.
 
 
 var gnb_naverme_layer_open_callback = function(){
@@ -231,11 +231,11 @@ var gnb_naverme_layer_close_callback = function(){
 
 
 <div id="u_skip">
-	<a href="#menu" tabindex="1"><span>���� �޴��� �ٷΰ���</span></a>
+	<a href="#menu" tabindex="1"><span>메인 메뉴로 바로가기</span></a>
 
 	
 	
-		<a href="#start" tabindex="2"><span>�������� �ٷΰ���</span></a>
+		<a href="#start" tabindex="2"><span>본문으로 바로가기</span></a>
 	
 
 </div>
@@ -265,23 +265,23 @@ var gnb_naverme_layer_close_callback = function(){
 			</div>
 
 			<div class="sta">
-				<h1 class="logo"> <a href="https://www.naver.com/" class="logo_naver" onClick="clickcr(this, 'STA.naver', '', '', event);"><span class="blind">���̹�</span></a>
-				<a href="/" class="logo_service" onClick="clickcr(this, 'STA.finance', '', '', event);"><span class="blind">����</span></a> </h1>
+				<h1 class="logo"> <a href="https://www.naver.com/" class="logo_naver" onClick="clickcr(this, 'STA.naver', '', '', event);"><span class="blind">네이버</span></a>
+				<a href="/" class="logo_service" onClick="clickcr(this, 'STA.finance', '', '', event);"><span class="blind">금융</span></a> </h1>
 				<form name="search" action="/search/search.nhn"  method="get"
 					onsubmit="return delayed_submit(this)" style="margin:0; padding:0;">
 				<fieldset>
-					<legend>�˻�</legend>
+					<legend>검색</legend>
 					<div class="snb_search_box">
 						<div class="snb_search_box_sub">
-							<input id="stock_items" type="text" title="�˻�" name="query" value="�����&middot;������&middot;�ݵ��&middot;ȯ����&middot;������� �Է�" accesskey="s" class="snb_search_text snb_default" autocomplete="off">
-							<a id="nautocomplete" href="#" onclick="return false" class="btn_arrow"><span class="blind">�ڵ��ϼ� ��ġ��</span></a>
+							<input id="stock_items" type="text" title="검색" name="query" value="종목명&middot;지수명&middot;펀드명&middot;환율명&middot;원자재명 입력" accesskey="s" class="snb_search_text snb_default" autocomplete="off">
+							<a id="nautocomplete" href="#" onclick="return false" class="btn_arrow"><span class="blind">자동완성 펼치기</span></a>
 						</div>
 						<div class="auto_area">
-							<h2 class="blind">�ڵ��ϼ�</h2>
-							<iframe id="autoFrame" src="/ac/reatcmp.nhn?menu=sise&submenu=" scrolling="no" height="0" frameborder="0" width="400" style="display: none;" marginheight="0" marginwidth="0" title="�ڵ��ϼ�"></iframe>
+							<h2 class="blind">자동완성</h2>
+							<iframe id="autoFrame" src="/ac/reatcmp.nhn?menu=sise&submenu=" scrolling="no" height="0" frameborder="0" width="400" style="display: none;" marginheight="0" marginwidth="0" title="자동완성"></iframe>
 						</div>
-						<button type="submit" class="snb_search_btn" onclick="clickcr(this, 'STA.search', '', '', event);" alt="�˻�"><span class="blind">�˻�</span></button>
-						<a href="#" target="_blank" class="snb_search_btn-total" onclick="itegrationSearch();clickcr(this, 'STA.nx', '', '', event);return false;">���հ˻�</a>
+						<button type="submit" class="snb_search_btn" onclick="clickcr(this, 'STA.search', '', '', event);" alt="검색"><span class="blind">검색</span></button>
+						<a href="#" target="_blank" class="snb_search_btn-total" onclick="itegrationSearch();clickcr(this, 'STA.nx', '', '', event);return false;">통합검색</a>
 					</div>
 				</fieldset>
 				</form>
@@ -292,15 +292,15 @@ var gnb_naverme_layer_close_callback = function(){
 		<div class="lnb_inner">
 			<div id="menu">
 				<ul class="menu">
-					<li class="m1 first "><a href="/" onClick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx">���� Ȩ</span></a></li>
-					<li class="m2 on"><a href="/sise/" onClick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx">��������</span></a></li>
-					<li class="m3 "><a href="/world/" onClick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx">�ؿ�����</span></a></li>
-					<li class="m4 "><a href="/marketindex/" onClick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx">������ǥ</span></a></li>
-					<li class="m5 "><a href="/fund/" onClick="clickcr(this, 'LNB.fund', '', '', event);"><span class="tx">�ݵ�</span></a>
+					<li class="m1 first "><a href="/" onClick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx">금융 홈</span></a></li>
+					<li class="m2 on"><a href="/sise/" onClick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx">국내증시</span></a></li>
+					<li class="m3 "><a href="/world/" onClick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx">해외증시</span></a></li>
+					<li class="m4 "><a href="/marketindex/" onClick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx">시장지표</span></a></li>
+					<li class="m5 "><a href="/fund/" onClick="clickcr(this, 'LNB.fund', '', '', event);"><span class="tx">펀드</span></a>
 						
 					</li>
-					<li class="m6 "><a href="/research/" onClick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx">����ġ</span></a></li>
-					<li class="m7 "><a href="/news/"><span class="tx">����</span></a></li>
+					<li class="m6 "><a href="/research/" onClick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx">리서치</span></a></li>
+					<li class="m7 "><a href="/news/"><span class="tx">뉴스</span></a></li>
 					<li class="m8 "><a href="/mystock/" onClick="clickcr(this, 'LNB.mystock', '', '', event);"><span class="tx">MY</span></a></li>
 				</ul>
 			</div>
@@ -313,7 +313,7 @@ var gnb_naverme_layer_close_callback = function(){
 
 	
 	<script type="text/JavaScript">
-		/* lcs ���� */
+		/* lcs 집계 */
         ;(function(){
             var eventType = "onpageshow" in window ? "pageshow" : "load";
             jindo.$Fn(function(){
@@ -321,8 +321,8 @@ var gnb_naverme_layer_close_callback = function(){
             }).attach(window, eventType);
         })();
 
-		/* �˻� �ڵ��ϼ� [ ����1 : �˻�input�� ID, ����2 : iframe �±� ID ]   */
-		// AutoComplete ����
+		/* 검색 자동완성 [ 인자1 : 검색input의 ID, 인자2 : iframe 태그 ID ]   */
+		// AutoComplete 생성
 		var acDomain = "ac.finance.naver.com";
         if (location.hostname.indexOf("staging-") > -1) {
             acDomain = "staging-" + acDomain;
@@ -333,16 +333,16 @@ var gnb_naverme_layer_close_callback = function(){
         var acUrl = "https://" + acDomain + "/ac";
 
 		smartSearch = new nhn.Autocomplete(
-			// InputManager ����
+			// InputManager 생성
 			new nhn.AcInputManager(jindo.$("stock_items")),
-			// DataManager ����
+			// DataManager 생성
 			new nhn.AcDataManager(acUrl, "jsonp", "get", {
                     st: "111",
                     r_lt : "111",
                     q_enc : "euc-kr",
                     r_enc : "euc-kr",
                     frm: "stock"}),
-			// ViewManager ����
+			// ViewManager 생성
 			new nhn.AcStockViewManager(jindo.$("autoFrame"), jindo.$("nautocomplete"), {
                                         strMax: 200,
                                         listMax: [7, 2, 2],
@@ -363,15 +363,15 @@ var gnb_naverme_layer_close_callback = function(){
 	            }
 	        });
 
-		/* ���հ˻�  start ----->  */
+		/* 통합검색  start ----->  */
 		document.domain = 'naver.com';
-		var sSearchHintText = '����������������ݵ����ȯ������������� �Է�';
+		var sSearchHintText = '종목명·지수명·펀드명·환율명·원자재명 입력';
 		function itegrationSearch() {
 			var query = jindo.$('stock_items').value;
 
 			if ( query == ''  || encodeURIComponent(query) == encodeURIComponent(sSearchHintText))
 			{
-				alert ( '�˻�� �Է��� �ּ���.' );
+				alert ( '검색어를 입력해 주세요.' );
 				return;
 			}
 
@@ -397,14 +397,14 @@ var gnb_naverme_layer_close_callback = function(){
 
 			if ( query == '' || query == sSearchHintText.replace(/^\s*/,'').replace(/\s*$/,''))
 			{
-				alert ( '�˻�� �Է��� �ּ���.' );
+				alert ( '검색어를 입력해 주세요.' );
 				return;
 			}
 			else {
 				object.submit();
 			}
 		}
-		/* <---------- ���հ˻�  end */
+		/* <---------- 통합검색  end */
 
 		function popup()
 		{
@@ -413,7 +413,7 @@ var gnb_naverme_layer_close_callback = function(){
 		}
 	</script>
 
-	<iframe id="me_layers" name="test" title="���̹��� ����" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>
+	<iframe id="me_layers" name="test" title="네이버미 영역" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>
 </div>
 <div id="wrap"  >
 	
@@ -443,61 +443,61 @@ function mouseOut(obj){
 
 			<!-- leftmenu -->
 			<div class="snb snb2">
-				<h2 class="h_sise"><a href="/sise/"><span class="blind">��������</span></a></h2>
+				<h2 class="h_sise"><a href="/sise/"><span class="blind">국내증시</span></a></h2>
 				<ul class="nav1">
-				<li class="frst"><strong class="lst_sise"><span class="blind">�ֿ�ü�����</span></strong>
+				<li class="frst"><strong class="lst_sise"><span class="blind">주요시세정보</span></strong>
 					<ul class="sub">
-					 <li class="type1 lst1_1"><a href="/sise/sise_index.nhn?code=KOSPI" onClick="clickcr(this,'siu.1','','',event);" class="off"><span class="blind">�ڽ���</span></a></li> 
-                     <li class="type1 lst1_2"><a href="/sise/sise_index.nhn?code=KOSDAQ" onClick="clickcr(this,'siu.2','','',event);" class="off"><span class="blind">�ڽ���</span></a></li>
-                     <li class="type1 lst1_3"><a href="/sise/sise_index.nhn?code=FUT" onClick="clickcr(this,'siu.3','','',event);" class="off"><span class="blind">����</span></a></li>
-                     <li class="type1 lst1_26"><a href="/sise/sise_index.nhn?code=KPI200" onClick="clickcr(this,'siu.26','','',event);" class="off"><span class="blind">�ڽ���200</span></a></li>
-                     <li class="type1 lst1_31"><a href="/sise/konex.nhn" onClick="clickcr(this,'siu.konex','','',event);" class="off"><span class="blind">�ڳؽ�</span></a></li>
-                     <li class="type1 lst1_16"><a href="/sise/sise_market_sum.nhn" onClick="clickcr(this,'siu.16','','',event);" class="on"><span class="blind">�ð��Ѿ�</span></a></li>
-                     <li class="type1 lst1_32" ><a href="/sise/dividend_list.nhn" onClick="clickcr(this,'siu.dividend','','',event);" class="off"><span class="blind">���</span></a></li>                     
-                     <li class="type1 lst1_4"><a href="/sise/sise_group.nhn?type=upjong" onClick="clickcr(this,'siu.4','','',event);" class="off"><span class="blind">����</span></a></li>
-                     <li class="type1 lst1_5" ><a href="/sise/theme.nhn" onClick="clickcr(this,'siu.5','','',event);" class="off"><span class="blind">�׸�</span></a></li>
-                     <li class="type1 lst1_30"><a href="/sise/sise_group.nhn?type=group"  onClick="clickcr(this,'siu.30','','',event);"  class="off"><span class="blind">�׷��</span></a></li>
+					 <li class="type1 lst1_1"><a href="/sise/sise_index.nhn?code=KOSPI" onClick="clickcr(this,'siu.1','','',event);" class="off"><span class="blind">코스피</span></a></li> 
+                     <li class="type1 lst1_2"><a href="/sise/sise_index.nhn?code=KOSDAQ" onClick="clickcr(this,'siu.2','','',event);" class="off"><span class="blind">코스닥</span></a></li>
+                     <li class="type1 lst1_3"><a href="/sise/sise_index.nhn?code=FUT" onClick="clickcr(this,'siu.3','','',event);" class="off"><span class="blind">선물</span></a></li>
+                     <li class="type1 lst1_26"><a href="/sise/sise_index.nhn?code=KPI200" onClick="clickcr(this,'siu.26','','',event);" class="off"><span class="blind">코스피200</span></a></li>
+                     <li class="type1 lst1_31"><a href="/sise/konex.nhn" onClick="clickcr(this,'siu.konex','','',event);" class="off"><span class="blind">코넥스</span></a></li>
+                     <li class="type1 lst1_16"><a href="/sise/sise_market_sum.nhn" onClick="clickcr(this,'siu.16','','',event);" class="on"><span class="blind">시가총액</span></a></li>
+                     <li class="type1 lst1_32" ><a href="/sise/dividend_list.nhn" onClick="clickcr(this,'siu.dividend','','',event);" class="off"><span class="blind">배당</span></a></li>                     
+                     <li class="type1 lst1_4"><a href="/sise/sise_group.nhn?type=upjong" onClick="clickcr(this,'siu.4','','',event);" class="off"><span class="blind">업종</span></a></li>
+                     <li class="type1 lst1_5" ><a href="/sise/theme.nhn" onClick="clickcr(this,'siu.5','','',event);" class="off"><span class="blind">테마</span></a></li>
+                     <li class="type1 lst1_30"><a href="/sise/sise_group.nhn?type=group"  onClick="clickcr(this,'siu.30','','',event);"  class="off"><span class="blind">그룹사</span></a></li>
 					 <li class="type1 lst1_27 "><a href="/sise/etf.nhn" onClick="clickcr(this,'siu.27','','',event);" class="off"><span class="blind">ETF</span></a></li>
 					 <li class="type1 lst1_34"><a href="/sise/etn.nhn" onClick="clickcr(this,'siu.34','','',event);" class="off"><span class="blind">ETN</span></a></li>
-					 <li class="type1 lst1_8 "><a href="/sise/sise_rise.nhn" onClick="clickcr(this,'siu.8','','',event);" class="off"><span class="blind">��?��?</span></a></li>
-                     <li class="type1 lst1_9 "><a href="/sise/sise_steady.nhn" onClick="clickcr(this,'siu.9','','',event);" class="off"><span class="blind">����</span></a></li>
-                     <li class="type1 lst1_10"><a href="/sise/sise_fall.nhn" onClick="clickcr(this,'siu.10','','',event);" class="off"><span class="blind">�϶�</span></a></li>
-                     <li class="type1 lst1_6"><a href="/sise/sise_upper.nhn" onClick="clickcr(this,'siu.6','','',event);" class="off"><span class="blind">���Ѱ�</span></a></li>
-                     <li class="type1 lst1_7"><a href="/sise/sise_lower.nhn" onClick="clickcr(this,'siu.7','','',event);" class="off"><span class="blind">���Ѱ�</span></a></li>
-                     <li class="type1 lst1_15 "><a href="/sise/sise_low_up.nhn" onClick="clickcr(this,'siu.15','','',event);" class="off"><span class="blind">�޵�</span></a></li>
-                     <li class="type1 lst1_14 "><a href="/sise/sise_high_down.nhn" onClick="clickcr(this,'siu.14','','',event);" class="off"><span class="blind">�޶�</span></a></li>
-                     <li class="type2 lst1_11"><a href="/sise/sise_quant.nhn" onClick="clickcr(this,'siu.11','','',event);" class="off"><span class="blind">�ŷ�����</span></a></li>  
-                     <li class="type1 lst1_12 "><a href="/sise/sise_quant_high.nhn" onClick="clickcr(this,'siu.12','','',event);" class="off"><span class="blind">����</span></a></li> 
-                     <li class="type1 lst1_13 "><a href="/sise/sise_quant_low.nhn" onClick="clickcr(this,'siu.13','','',event);" class="off"><span class="blind">�ް�</span></a></li>
-                     <li class="lst1_23"><a href="/sise/sise_trans_style.nhn" onClick="clickcr(this,'siu.23','','',event);" class="off"><span class="blind">�����ں��Ÿŵ���</span></a></li>  
-                     <li class="type1 lst1_17"><a href="/sise/sise_deal_rank.nhn" onClick="clickcr(this,'siu.17','','',event);" class="off"><span class="blind">�ܱ��θŸ�</span></a></li> 
-                     <li class="type1 lst1_18"><a href="/sise/sise_deal_rank.nhn?investor_gubun=1000" onClick="clickcr(this,'siu.18','','',event);" class="off"><span class="blind">����Ÿ�</span></a></li> 
-                     <li class="lst1_19"><a href="/sise/sise_program.nhn" onClick="clickcr(this,'siu.19','','',event);" class="off"><span class="blind">���α׷��Ÿŵ���</span></a></li> 
-                     <li class="lst1_22"><a href="/sise/sise_deposit.nhn" onClick="clickcr(this,'siu.22','','',event);" class="off"><span class="blind">�����ڱݵ���</span></a></li>
-                     <li class="lst1_21"><a href="/sise/sise_new_stock.nhn" onClick="clickcr(this,'siu.21','','',event);" class="off"><span class="blind">�űԻ���</span></a></li>  
-                     <li class="lst1_24 "><a href="/sise/sise_foreign_hold.nhn" onClick="clickcr(this,'siu.24','','',event);" class="off"><span class="blind">�ܱ��κ���</span></a></li> 
-                     <li class="lst1_25 "><a href="/sise/market3news_list.nhn" onClick="clickcr(this,'siu.25','','',event);" class="off"><span class="blind">��ܽü�</span></a></li>
+					 <li class="type1 lst1_8 "><a href="/sise/sise_rise.nhn" onClick="clickcr(this,'siu.8','','',event);" class="off"><span class="blind">ª?Ω?</span></a></li>
+                     <li class="type1 lst1_9 "><a href="/sise/sise_steady.nhn" onClick="clickcr(this,'siu.9','','',event);" class="off"><span class="blind">보합</span></a></li>
+                     <li class="type1 lst1_10"><a href="/sise/sise_fall.nhn" onClick="clickcr(this,'siu.10','','',event);" class="off"><span class="blind">하락</span></a></li>
+                     <li class="type1 lst1_6"><a href="/sise/sise_upper.nhn" onClick="clickcr(this,'siu.6','','',event);" class="off"><span class="blind">상한가</span></a></li>
+                     <li class="type1 lst1_7"><a href="/sise/sise_lower.nhn" onClick="clickcr(this,'siu.7','','',event);" class="off"><span class="blind">하한가</span></a></li>
+                     <li class="type1 lst1_15 "><a href="/sise/sise_low_up.nhn" onClick="clickcr(this,'siu.15','','',event);" class="off"><span class="blind">급등</span></a></li>
+                     <li class="type1 lst1_14 "><a href="/sise/sise_high_down.nhn" onClick="clickcr(this,'siu.14','','',event);" class="off"><span class="blind">급락</span></a></li>
+                     <li class="type2 lst1_11"><a href="/sise/sise_quant.nhn" onClick="clickcr(this,'siu.11','','',event);" class="off"><span class="blind">거래상위</span></a></li>  
+                     <li class="type1 lst1_12 "><a href="/sise/sise_quant_high.nhn" onClick="clickcr(this,'siu.12','','',event);" class="off"><span class="blind">급증</span></a></li> 
+                     <li class="type1 lst1_13 "><a href="/sise/sise_quant_low.nhn" onClick="clickcr(this,'siu.13','','',event);" class="off"><span class="blind">급감</span></a></li>
+                     <li class="lst1_23"><a href="/sise/sise_trans_style.nhn" onClick="clickcr(this,'siu.23','','',event);" class="off"><span class="blind">투자자별매매동향</span></a></li>  
+                     <li class="type1 lst1_17"><a href="/sise/sise_deal_rank.nhn" onClick="clickcr(this,'siu.17','','',event);" class="off"><span class="blind">외국인매매</span></a></li> 
+                     <li class="type1 lst1_18"><a href="/sise/sise_deal_rank.nhn?investor_gubun=1000" onClick="clickcr(this,'siu.18','','',event);" class="off"><span class="blind">기관매매</span></a></li> 
+                     <li class="lst1_19"><a href="/sise/sise_program.nhn" onClick="clickcr(this,'siu.19','','',event);" class="off"><span class="blind">프로그램매매동향</span></a></li> 
+                     <li class="lst1_22"><a href="/sise/sise_deposit.nhn" onClick="clickcr(this,'siu.22','','',event);" class="off"><span class="blind">증시자금동향</span></a></li>
+                     <li class="lst1_21"><a href="/sise/sise_new_stock.nhn" onClick="clickcr(this,'siu.21','','',event);" class="off"><span class="blind">신규상장</span></a></li>  
+                     <li class="lst1_24 "><a href="/sise/sise_foreign_hold.nhn" onClick="clickcr(this,'siu.24','','',event);" class="off"><span class="blind">외국인보유</span></a></li> 
+                     <li class="lst1_25 "><a href="/sise/market3news_list.nhn" onClick="clickcr(this,'siu.25','','',event);" class="off"><span class="blind">장외시세</span></a></li>
                      <li class="lst1_33 "><a href="/sise/ipo.nhn" onClick="clickcr(this,'siu.33','','',event);" class="off"><span class="blind">IPO</span></a></li>
 					</ul>
 				</li>
-				<li><strong class="lst_prevent"><span class="blind">�����ں�ȣ</span></strong>
+				<li><strong class="lst_prevent"><span class="blind">투자자보호</span></strong>
 	                <ul class="sub">
-	                 <li class="lst1_20"><a href="/sise/management.nhn" onClick="clickcr(this,'siu.20','','',event);" class="off"><span class="blind">��������</span></a></li>
-	                 <li class="lst1_29"><a href="/sise/trading_halt.nhn" onClick="clickcr(this,'siu.29','','',event);" class="off"><span class="blind">�ŷ���������</span></a></li> 
-	                 <li class="lst1_28"><a href="/sise/investment_alert.nhn?type=caution" onClick="clickcr(this,'siu.28','','',event);" class="off"><span class="blind">����溸����</span></a></li>
+	                 <li class="lst1_20"><a href="/sise/management.nhn" onClick="clickcr(this,'siu.20','','',event);" class="off"><span class="blind">관리종목</span></a></li>
+	                 <li class="lst1_29"><a href="/sise/trading_halt.nhn" onClick="clickcr(this,'siu.29','','',event);" class="off"><span class="blind">거래정지종목</span></a></li> 
+	                 <li class="lst1_28"><a href="/sise/investment_alert.nhn?type=caution" onClick="clickcr(this,'siu.28','','',event);" class="off"><span class="blind">시장경보종목</span></a></li>
 	                </ul>
             	</li>
-    			<li><strong class="lst_search"><span class="blind">�������ǰ˻�</span></strong>
+    			<li><strong class="lst_search"><span class="blind">종목조건검색</span></strong>
 					<ul class="sub">
-					 <li class="type1 lst2_2"><a href="/sise/item_gold.nhn" onClick="clickcr(this,'sih.2','','',event);" class="off"><span class="blind">���ũ�ν�</span></a></li>
-					 <li class="type1 lst2_1"><a href="/sise/item_gap.nhn" onClick="clickcr(this,'sih.1','','',event);" class="off"><span class="blind">�����</span></a></li>
-					 <li class="type1 lst2_3"><a href="/sise/item_igyuk.nhn" onClick="clickcr(this,'sih.3','','',event);" class="off"><span class="blind">�̰ݵ�����</span></a></li>
-					 <li class="type1 lst2_4"><a href="/sise/item_overheating_1.nhn" onClick="clickcr(this,'sih.4','','',event);" class="off"><span class="blind">���ɰ���</span></a></li>
-					 <li class="lst2_5"><a href="/sise/item_overheating_2.nhn" onClick="clickcr(this,'sih.5','','',event);" class="off"><span class="blind">��밭������</span></a></li>  	                 
+					 <li class="type1 lst2_2"><a href="/sise/item_gold.nhn" onClick="clickcr(this,'sih.2','','',event);" class="off"><span class="blind">골든크로스</span></a></li>
+					 <li class="type1 lst2_1"><a href="/sise/item_gap.nhn" onClick="clickcr(this,'sih.1','','',event);" class="off"><span class="blind">갭상승</span></a></li>
+					 <li class="type1 lst2_3"><a href="/sise/item_igyuk.nhn" onClick="clickcr(this,'sih.3','','',event);" class="off"><span class="blind">이격도과열</span></a></li>
+					 <li class="type1 lst2_4"><a href="/sise/item_overheating_1.nhn" onClick="clickcr(this,'sih.4','','',event);" class="off"><span class="blind">투심과열</span></a></li>
+					 <li class="lst2_5"><a href="/sise/item_overheating_2.nhn" onClick="clickcr(this,'sih.5','','',event);" class="off"><span class="blind">상대강도과열</span></a></li>  	                 
 					</ul>
 				</li>
-				<li><a href="/sise/report.nhn"><strong class="lst_report"><span class="blind">��� ���ڰ���</span></strong></a></li>
-				<li class="last"><a href="/sise/short_trade.nhn"><strong class="lst_short"><span class="blind">���ŵ� ���� ��Ȳ</span></strong></a></li>				
+				<li><a href="/sise/report.nhn"><strong class="lst_report"><span class="blind">기업 전자공시</span></strong></a></li>
+				<li class="last"><a href="/sise/short_trade.nhn"><strong class="lst_short"><span class="blind">공매도 종합 현황</span></strong></a></li>				
 				</ul>
 								
 			</div>
@@ -505,16 +505,16 @@ function mouseOut(obj){
 			
 			<!-- //leftmenu -->
 		<div id="contentarea">
-			<!-- ������ -->
+			<!-- 컨텐츠 -->
 			<div id="contentarea_left" class="bnd_wid">
-				<!-- �������� : �޴��� �°� �����ּ��� -->
+				<!-- 로케이터 : 메뉴에 맞게 고쳐주세요 -->
 				<div class="sub_location tlt_bottom_line">
-					<a href="/">����Ȩ</a> &gt; <a href="/sise/">��������</a> &gt; <a href="#">�ð��Ѿ�</a>
+					<a href="/">금융홈</a> &gt; <a href="/sise/">국내증시</a> &gt; <a href="#">시가총액</a>
 				</div>
-				<!-- //�������� -->
+				<!-- //로케이터 -->
 
-				<h3 class="sub_tlt">�ð��Ѿ�<span class="tlt_page">�׸��� �����Ӱ� �����Ͻ� �� �ֽ��ϴ�.&nbsp;&nbsp;<img src='https://ssl.pstatic.net/imgstock/images5/bar_C7C.gif'>&nbsp;&nbsp;�ִ� 6������ ���� �����մϴ�.</span></h3>
-			<!-- �׸��� -->
+				<h3 class="sub_tlt">시가총액<span class="tlt_page">항목을 자유롭게 변경하실 수 있습니다.&nbsp;&nbsp;<img src='https://ssl.pstatic.net/imgstock/images5/bar_C7C.gif'>&nbsp;&nbsp;최대 6개까지 설정 가능합니다.</span></h3>
+			<!-- 항목선택 -->
 		
 		
 	
@@ -538,7 +538,7 @@ function fieldSubmit() {
     }
     
     if(chkcnt > 6) {
-    	alert('�ִ� 6�������� �����մϴ�.');
+    	alert('최대 6개까지만 가능합니다.');
     	return;
     }
 
@@ -552,14 +552,14 @@ function fieldDefault() {
 
 }
 </script>
-<!-- �׸��� -->
+<!-- 항목선택 -->
 <div class="box_type_m" style="margin-top:0">
 <form name='field_form'>
 <input type=hidden name=menu value="market_sum">
 <input type=hidden name=returnUrl value="http://finance.naver.com/sise/sise_market_sum.nhn">
 	<div class="subcnt_sise_item sub810"><div class="subcnt_sise_item_top sub810t">
-		<table summary="���Ͻô� �׸��� �����Ͽ� ����� ���� �� �ֽ��ϴ�." cellpadding="0" cellspacing="0" class="item_list">
-		<caption>�׸� ����ǥ</caption>
+		<table summary="원하시는 항목을 선택하여 결과를 보실 수 있습니다." cellpadding="0" cellspacing="0" class="item_list">
+		<caption>항목 선택표</caption>
 		<colgroup><col width=62><col width=84><col width=111><col width=97><col width=116><col width=85></colgroup>
 		
 			<tr>
@@ -583,7 +583,7 @@ function fieldDefault() {
 				
 					
 				
-				<td class='choice'><input type="checkbox" id="option1" name="fieldIds" value="quant"  checked> <label for="option1">�ŷ���</label></td>
+				<td class='choice'><input type="checkbox" id="option1" name="fieldIds" value="quant"  checked> <label for="option1">거래량</label></td>
 			
 				
 				
@@ -599,7 +599,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option2" name="fieldIds" value="ask_buy"  > <label for="option2">�ż�ȣ��</label></td>
+				<td ><input type="checkbox" id="option2" name="fieldIds" value="ask_buy"  > <label for="option2">매수호가</label></td>
 			
 				
 				
@@ -615,7 +615,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option3" name="fieldIds" value="amount"  > <label for="option3">�ŷ����</label>(�鸸)</td>
+				<td ><input type="checkbox" id="option3" name="fieldIds" value="amount"  > <label for="option3">거래대금</label>(백만)</td>
 			
 				
 				
@@ -633,7 +633,7 @@ function fieldDefault() {
 				
 					
 				
-				<td class='choice'><input type="checkbox" id="option4" name="fieldIds" value="market_sum"  checked> <label for="option4">�ð��Ѿ�</label>(��)</td>
+				<td class='choice'><input type="checkbox" id="option4" name="fieldIds" value="market_sum"  checked> <label for="option4">시가총액</label>(억)</td>
 			
 				
 				
@@ -649,7 +649,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option5" name="fieldIds" value="operating_profit"  > <label for="option5">��������</label>(��)</td>
+				<td ><input type="checkbox" id="option5" name="fieldIds" value="operating_profit"  > <label for="option5">영업이익</label>(억)</td>
 			
 				
 				
@@ -667,7 +667,7 @@ function fieldDefault() {
 				
 					
 				
-				<td class='choice'><input type="checkbox" id="option6" name="fieldIds" value="per"  checked> <label for="option6">PER</label>(��)</td>
+				<td class='choice'><input type="checkbox" id="option6" name="fieldIds" value="per"  checked> <label for="option6">PER</label>(배)</td>
 			
 			</tr>
 		
@@ -690,7 +690,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option7" name="fieldIds" value="open_val"  > <label for="option7">�ð�</label></td>
+				<td ><input type="checkbox" id="option7" name="fieldIds" value="open_val"  > <label for="option7">시가</label></td>
 			
 				
 				
@@ -706,7 +706,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option8" name="fieldIds" value="ask_sell"  > <label for="option8">�ŵ�ȣ��</label></td>
+				<td ><input type="checkbox" id="option8" name="fieldIds" value="ask_sell"  > <label for="option8">매도호가</label></td>
 			
 				
 				
@@ -722,7 +722,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option9" name="fieldIds" value="prev_quant"  > <label for="option9">���ϰŷ���</label></td>
+				<td ><input type="checkbox" id="option9" name="fieldIds" value="prev_quant"  > <label for="option9">전일거래량</label></td>
 			
 				
 				
@@ -738,7 +738,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option10" name="fieldIds" value="property_total"  > <label for="option10">�ڻ��Ѱ�</label>(��)</td>
+				<td ><input type="checkbox" id="option10" name="fieldIds" value="property_total"  > <label for="option10">자산총계</label>(억)</td>
 			
 				
 				
@@ -754,7 +754,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option11" name="fieldIds" value="operating_profit_increasing_rate"  > <label for="option11">��������������</label></td>
+				<td ><input type="checkbox" id="option11" name="fieldIds" value="operating_profit_increasing_rate"  > <label for="option11">영업이익증가율</label></td>
 			
 				
 				
@@ -795,7 +795,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option13" name="fieldIds" value="high_val"  > <label for="option13">����</label></td>
+				<td ><input type="checkbox" id="option13" name="fieldIds" value="high_val"  > <label for="option13">고가</label></td>
 			
 				
 				
@@ -811,7 +811,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option14" name="fieldIds" value="buy_total"  > <label for="option14">�ż����ܷ�</label></td>
+				<td ><input type="checkbox" id="option14" name="fieldIds" value="buy_total"  > <label for="option14">매수총잔량</label></td>
 			
 				
 				
@@ -829,7 +829,7 @@ function fieldDefault() {
 				
 					
 				
-				<td class='choice'><input type="checkbox" id="option15" name="fieldIds" value="frgn_rate"  checked> <label for="option15">�ܱ��κ���</label></td>
+				<td class='choice'><input type="checkbox" id="option15" name="fieldIds" value="frgn_rate"  checked> <label for="option15">외국인비율</label></td>
 			
 				
 				
@@ -845,7 +845,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option16" name="fieldIds" value="debt_total"  > <label for="option16">��ä�Ѱ�</label>(��)</td>
+				<td ><input type="checkbox" id="option16" name="fieldIds" value="debt_total"  > <label for="option16">부채총계</label>(억)</td>
 			
 				
 				
@@ -861,7 +861,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option17" name="fieldIds" value="net_income"  > <label for="option17">��������</label>(��)</td>
+				<td ><input type="checkbox" id="option17" name="fieldIds" value="net_income"  > <label for="option17">당기순이익</label>(억)</td>
 			
 				
 				
@@ -900,7 +900,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option19" name="fieldIds" value="low_val"  > <label for="option19">����</label></td>
+				<td ><input type="checkbox" id="option19" name="fieldIds" value="low_val"  > <label for="option19">저가</label></td>
 			
 				
 				
@@ -916,7 +916,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option20" name="fieldIds" value="sell_total"  > <label for="option20">�ŵ����ܷ�</label></td>
+				<td ><input type="checkbox" id="option20" name="fieldIds" value="sell_total"  > <label for="option20">매도총잔량</label></td>
 			
 				
 				
@@ -934,7 +934,7 @@ function fieldDefault() {
 				
 					
 				
-				<td class='choice'><input type="checkbox" id="option21" name="fieldIds" value="listed_stock_cnt"  checked> <label for="option21">�����ֽļ�</label>(õ��)</td>
+				<td class='choice'><input type="checkbox" id="option21" name="fieldIds" value="listed_stock_cnt"  checked> <label for="option21">상장주식수</label>(천주)</td>
 			
 				
 				
@@ -950,7 +950,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option22" name="fieldIds" value="sales"  > <label for="option22">�����</label>(��)</td>
+				<td ><input type="checkbox" id="option22" name="fieldIds" value="sales"  > <label for="option22">매출액</label>(억)</td>
 			
 				
 				
@@ -966,7 +966,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option23" name="fieldIds" value="eps"  > <label for="option23">�ִ������</label>(��)</td>
+				<td ><input type="checkbox" id="option23" name="fieldIds" value="eps"  > <label for="option23">주당순이익</label>(원)</td>
 			
 				
 				
@@ -982,7 +982,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option24" name="fieldIds" value="pbr"  > <label for="option24">PBR</label>(��)</td>
+				<td ><input type="checkbox" id="option24" name="fieldIds" value="pbr"  > <label for="option24">PBR</label>(배)</td>
 			
 			</tr>
 		
@@ -1005,7 +1005,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option25" name="fieldIds" value="sales_increasing_rate"  > <label for="option25">�����������</label></td>
+				<td ><input type="checkbox" id="option25" name="fieldIds" value="sales_increasing_rate"  > <label for="option25">매출액증가율</label></td>
 			
 				
 				
@@ -1021,7 +1021,7 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option26" name="fieldIds" value="dividend"  > <label for="option26">�����ֹ���</label>(��)</td>
+				<td ><input type="checkbox" id="option26" name="fieldIds" value="dividend"  > <label for="option26">보통주배당금</label>(원)</td>
 			
 				
 				
@@ -1037,20 +1037,20 @@ function fieldDefault() {
 				
 					
 				
-				<td ><input type="checkbox" id="option27" name="fieldIds" value="reserve_ratio"  > <label for="option27">������</label>(%)</td>
+				<td ><input type="checkbox" id="option27" name="fieldIds" value="reserve_ratio"  > <label for="option27">유보율</label>(%)</td>
 			
 			</tr>
 		
 		</table>
 		<div class="item_btn">
-			<a href="javascript:fieldSubmit()"><img src="https://ssl.pstatic.net/imgstock/images5/btn_apply.gif" alt="�����ϱ�" width="55" height="18"></a><a href="javascript:fieldDefault()"><img src="https://ssl.pstatic.net/imgstock/images5/btn_initialize.gif" alt="�ʱ��� ������" width="76" height="18"></a>
+			<a href="javascript:fieldSubmit()"><img src="https://ssl.pstatic.net/imgstock/images5/btn_apply.gif" alt="적용하기" width="55" height="18"></a><a href="javascript:fieldDefault()"><img src="https://ssl.pstatic.net/imgstock/images5/btn_initialize.gif" alt="초기항 목으로" width="76" height="18"></a>
 		</div>
 	</div></div>
 </div>
 </form>
-<!-- //�׸��� �� -->
+<!-- //항목선택 끝 -->
 
-			<!-- //�׸��� �� -->
+			<!-- //항목선택 끝 -->
 			</div>
 			<!--  right area -->
 			<div id="contentarea_right">
@@ -1065,26 +1065,26 @@ function fieldDefault() {
 
 			</div>
 
-			<!-- ���� -->
+			<!-- 종목 -->
 			<div class="box_type_l">
 				<div class="tab_style_1">
 
 	
 	
 	
-					<div class="tab_smeun choice"><div class="choice_lt"></div>�ڽ���</div>
-					<div class="tab_smeun"><a href="?sosok=1">�ڽ���</a></div>
+					<div class="tab_smeun choice"><div class="choice_lt"></div>코스피</div>
+					<div class="tab_smeun"><a href="?sosok=1">코스닥</a></div>
 	
 
 				</div>
 				
-				<!-- [D] Ȱ��ȭ�� �Ǹ޴��� ���� blind text �������ּ��� -->
+				<!-- [D] 활성화된 탭메뉴에 따라 blind text 변경해주세요 -->
 
 	
 	
-				<h4 class="blind">�ڽ���</h4>
-				<table summary="�ڽ��� �ü������� ������ �׸� ���� ������ �����մϴ�." cellpadding="0" cellspacing="0" class="type_2">
-				<caption>�ڽ���</caption>
+				<h4 class="blind">코스피</h4>
+				<table summary="코스피 시세정보를 선택한 항목에 따라 정보를 제공합니다." cellpadding="0" cellspacing="0" class="type_2">
+				<caption>코스피</caption>
 	
 
 
@@ -1113,25 +1113,25 @@ function fieldDefault() {
 				<thead>
 				<tr>
 					<th scope="col">N</th>
-					<th scope="col">�����</th>
-					<th scope="col">���簡</th>
-					<th scope="col" class="tr" style="padding-right:8px">���Ϻ�</th>
-					<th scope="col">�����</th>
-					<th scope="col">�׸鰡</th>
+					<th scope="col">종목명</th>
+					<th scope="col">현재가</th>
+					<th scope="col" class="tr" style="padding-right:8px">전일비</th>
+					<th scope="col">등락률</th>
+					<th scope="col">액면가</th>
 	
-					<th scope="col">�ð��Ѿ�</th>
+					<th scope="col">시가총액</th>
 	
-					<th scope="col">�����ֽļ�</th>
+					<th scope="col">상장주식수</th>
 	
-					<th scope="col">�ܱ��κ���</th>
+					<th scope="col">외국인비율</th>
 	
-					<th scope="col">�ŷ���</th>
+					<th scope="col">거래량</th>
 	
 					<th scope="col">PER</th>
 	
 					<th scope="col">ROE</th>
 	
-					<th scope="col">��н�</th>
+					<th scope="col">토론실</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -1144,10 +1144,10 @@ function fieldDefault() {
 				
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">1</td>
-					<td><a href="/item/main.nhn?code=005930" class="tltle">�Ｚ����</a></td>
+					<td><a href="/item/main.nhn?code=005930" class="tltle">삼성전자</a></td>
 					<td class="number">79,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				800
 				</span>
 			</td>
@@ -1206,7 +1206,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=005930"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=005930"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1217,10 +1217,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">2</td>
-					<td><a href="/item/main.nhn?code=000660" class="tltle">SK���̴н�</a></td>
+					<td><a href="/item/main.nhn?code=000660" class="tltle">SK하이닉스</a></td>
 					<td class="number">119,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,500
 				</span>
 			</td>
@@ -1279,7 +1279,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=000660"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=000660"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1293,7 +1293,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=035420" class="tltle">NAVER</a></td>
 					<td class="number">443,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,000
 				</span>
 			</td>
@@ -1352,7 +1352,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=035420"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=035420"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1363,10 +1363,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">4</td>
-					<td><a href="/item/main.nhn?code=035720" class="tltle">īī��</a></td>
+					<td><a href="/item/main.nhn?code=035720" class="tltle">카카오</a></td>
 					<td class="number">154,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				3,000
 				</span>
 			</td>
@@ -1425,7 +1425,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=035720"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=035720"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1436,10 +1436,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">5</td>
-					<td><a href="/item/main.nhn?code=207940" class="tltle">�Ｚ���̿�������</a></td>
+					<td><a href="/item/main.nhn?code=207940" class="tltle">삼성바이오로직스</a></td>
 					<td class="number">916,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				17,000
 				</span>
 			</td>
@@ -1498,7 +1498,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=207940"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=207940"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1513,10 +1513,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">6</td>
-					<td><a href="/item/main.nhn?code=005935" class="tltle">�Ｚ���ڿ�</a></td>
+					<td><a href="/item/main.nhn?code=005935" class="tltle">삼성전자우</a></td>
 					<td class="number">72,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				400
 				</span>
 			</td>
@@ -1575,7 +1575,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=005935"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=005935"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1586,10 +1586,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">7</td>
-					<td><a href="/item/main.nhn?code=051910" class="tltle">LGȭ��</a></td>
+					<td><a href="/item/main.nhn?code=051910" class="tltle">LG화학</a></td>
 					<td class="number">820,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				8,000
 				</span>
 			</td>
@@ -1648,7 +1648,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=051910"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=051910"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1659,10 +1659,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">8</td>
-					<td><a href="/item/main.nhn?code=006400" class="tltle">�ＺSDI</a></td>
+					<td><a href="/item/main.nhn?code=006400" class="tltle">삼성SDI</a></td>
 					<td class="number">743,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				6,000
 				</span>
 			</td>
@@ -1721,7 +1721,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=006400"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=006400"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1732,10 +1732,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">9</td>
-					<td><a href="/item/main.nhn?code=005380" class="tltle">������</a></td>
+					<td><a href="/item/main.nhn?code=005380" class="tltle">현대차</a></td>
 					<td class="number">227,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,500
 				</span>
 			</td>
@@ -1794,7 +1794,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=005380"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=005380"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1805,10 +1805,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">10</td>
-					<td><a href="/item/main.nhn?code=068270" class="tltle">��Ʈ����</a></td>
+					<td><a href="/item/main.nhn?code=068270" class="tltle">셀트리온</a></td>
 					<td class="number">263,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				6,000
 				</span>
 			</td>
@@ -1867,7 +1867,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=068270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=068270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1882,10 +1882,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">11</td>
-					<td><a href="/item/main.nhn?code=000270" class="tltle">���</a></td>
+					<td><a href="/item/main.nhn?code=000270" class="tltle">기아</a></td>
 					<td class="number">85,800</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,300
 				</span>
 			</td>
@@ -1944,7 +1944,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=000270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=000270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -1958,7 +1958,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=005490" class="tltle">POSCO</a></td>
 					<td class="number">334,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				6,500
 				</span>
 			</td>
@@ -2017,7 +2017,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=005490"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=005490"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2028,10 +2028,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">13</td>
-					<td><a href="/item/main.nhn?code=051900" class="tltle">LG��Ȱ�ǰ�</a></td>
+					<td><a href="/item/main.nhn?code=051900" class="tltle">LG생활건강</a></td>
 					<td class="number">1,711,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,000
 				</span>
 			</td>
@@ -2090,7 +2090,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=051900"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=051900"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2101,10 +2101,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">14</td>
-					<td><a href="/item/main.nhn?code=012330" class="tltle">������</a></td>
+					<td><a href="/item/main.nhn?code=012330" class="tltle">현대모비스</a></td>
 					<td class="number">280,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,500
 				</span>
 			</td>
@@ -2163,7 +2163,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=012330"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=012330"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2174,10 +2174,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">15</td>
-					<td><a href="/item/main.nhn?code=066570" class="tltle">LG����</a></td>
+					<td><a href="/item/main.nhn?code=066570" class="tltle">LG전자</a></td>
 					<td class="number">157,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				3,000
 				</span>
 			</td>
@@ -2236,7 +2236,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=066570"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=066570"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2251,10 +2251,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">16</td>
-					<td><a href="/item/main.nhn?code=028260" class="tltle">�Ｚ����</a></td>
+					<td><a href="/item/main.nhn?code=028260" class="tltle">삼성물산</a></td>
 					<td class="number">132,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,000
 				</span>
 			</td>
@@ -2313,7 +2313,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=028260"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=028260"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2324,10 +2324,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">17</td>
-					<td><a href="/item/main.nhn?code=096770" class="tltle">SK�̳뺣�̼�</a></td>
+					<td><a href="/item/main.nhn?code=096770" class="tltle">SK이노베이션</a></td>
 					<td class="number">258,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,500
 				</span>
 			</td>
@@ -2386,7 +2386,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=096770"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=096770"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2397,10 +2397,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">18</td>
-					<td><a href="/item/main.nhn?code=017670" class="tltle">SK�ڷ���</a></td>
+					<td><a href="/item/main.nhn?code=017670" class="tltle">SK텔레콤</a></td>
 					<td class="number">326,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				4,500
 				</span>
 			</td>
@@ -2459,7 +2459,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=017670"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=017670"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2470,10 +2470,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">19</td>
-					<td><a href="/item/main.nhn?code=105560" class="tltle">KB����</a></td>
+					<td><a href="/item/main.nhn?code=105560" class="tltle">KB금융</a></td>
 					<td class="number">51,100</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,400
 				</span>
 			</td>
@@ -2532,7 +2532,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=105560"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=105560"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2543,10 +2543,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">20</td>
-					<td><a href="/item/main.nhn?code=055550" class="tltle">��������</a></td>
+					<td><a href="/item/main.nhn?code=055550" class="tltle">신한지주</a></td>
 					<td class="number">38,200</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				550
 				</span>
 			</td>
@@ -2605,7 +2605,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=055550"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=055550"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2623,7 +2623,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=034730" class="tltle">SK</a></td>
 					<td class="number">273,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,500
 				</span>
 			</td>
@@ -2682,7 +2682,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=034730"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=034730"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2693,10 +2693,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">22</td>
-					<td><a href="/item/main.nhn?code=036570" class="tltle">��������Ʈ</a></td>
+					<td><a href="/item/main.nhn?code=036570" class="tltle">엔씨소프트</a></td>
 					<td class="number">827,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				12,000
 				</span>
 			</td>
@@ -2755,7 +2755,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=036570"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=036570"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2769,7 +2769,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=011200" class="tltle">HMM</a></td>
 					<td class="number">43,900</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				50
 				</span>
 			</td>
@@ -2828,7 +2828,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=011200"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=011200"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2839,10 +2839,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">24</td>
-					<td><a href="/item/main.nhn?code=015760" class="tltle">�ѱ�����</a></td>
+					<td><a href="/item/main.nhn?code=015760" class="tltle">한국전력</a></td>
 					<td class="number">25,650</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				600
 				</span>
 			</td>
@@ -2901,7 +2901,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=015760"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=015760"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2915,7 +2915,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=003550" class="tltle">LG</a></td>
 					<td class="number">97,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,800
 				</span>
 			</td>
@@ -2974,7 +2974,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=003550"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=003550"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -2989,10 +2989,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">26</td>
-					<td><a href="/item/main.nhn?code=032830" class="tltle">�Ｚ����</a></td>
+					<td><a href="/item/main.nhn?code=032830" class="tltle">삼성생명</a></td>
 					<td class="number">76,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,300
 				</span>
 			</td>
@@ -3051,7 +3051,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=032830"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=032830"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3062,10 +3062,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">27</td>
-					<td><a href="/item/main.nhn?code=361610" class="tltle">SK��������ũ�����</a></td>
+					<td><a href="/item/main.nhn?code=361610" class="tltle">SK아이이테크놀로지</a></td>
 					<td class="number">211,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,000
 				</span>
 			</td>
@@ -3124,7 +3124,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=361610"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=361610"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3135,10 +3135,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">28</td>
-					<td><a href="/item/main.nhn?code=018260" class="tltle">�Ｚ�����𿡽�</a></td>
+					<td><a href="/item/main.nhn?code=018260" class="tltle">삼성에스디에스</a></td>
 					<td class="number">183,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,000
 				</span>
 			</td>
@@ -3197,7 +3197,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=018260"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=018260"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3208,10 +3208,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">29</td>
-					<td><a href="/item/main.nhn?code=090430" class="tltle">�Ƹ��۽���</a></td>
+					<td><a href="/item/main.nhn?code=090430" class="tltle">아모레퍼시픽</a></td>
 					<td class="number">240,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,000
 				</span>
 			</td>
@@ -3270,7 +3270,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=090430"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=090430"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3281,10 +3281,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">30</td>
-					<td><a href="/item/main.nhn?code=009150" class="tltle">�Ｚ����</a></td>
+					<td><a href="/item/main.nhn?code=009150" class="tltle">삼성전기</a></td>
 					<td class="number">184,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				4,500
 				</span>
 			</td>
@@ -3343,7 +3343,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=009150"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=009150"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3358,10 +3358,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">31</td>
-					<td><a href="/item/main.nhn?code=003670" class="tltle">�������ɹ�Į</a></td>
+					<td><a href="/item/main.nhn?code=003670" class="tltle">포스코케미칼</a></td>
 					<td class="number">166,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				1,500
 				</span>
 			</td>
@@ -3420,7 +3420,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=003670"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=003670"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3431,10 +3431,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">32</td>
-					<td><a href="/item/main.nhn?code=086790" class="tltle">�ϳ���������</a></td>
+					<td><a href="/item/main.nhn?code=086790" class="tltle">하나금융지주</a></td>
 					<td class="number">42,800</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,000
 				</span>
 			</td>
@@ -3493,7 +3493,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=086790"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=086790"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3504,10 +3504,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">33</td>
-					<td><a href="/item/main.nhn?code=352820" class="tltle">���̺�</a></td>
+					<td><a href="/item/main.nhn?code=352820" class="tltle">하이브</a></td>
 					<td class="number">315,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,500
 				</span>
 			</td>
@@ -3566,7 +3566,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=352820"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=352820"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3577,10 +3577,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">34</td>
-					<td><a href="/item/main.nhn?code=302440" class="tltle">SK���̿����̾�</a></td>
+					<td><a href="/item/main.nhn?code=302440" class="tltle">SK바이오사이언스</a></td>
 					<td class="number">156,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,000
 				</span>
 			</td>
@@ -3639,7 +3639,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=302440"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=302440"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3650,10 +3650,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">35</td>
-					<td><a href="/item/main.nhn?code=251270" class="tltle">�ݸ���</a></td>
+					<td><a href="/item/main.nhn?code=251270" class="tltle">넷마블</a></td>
 					<td class="number">137,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				2,500
 				</span>
 			</td>
@@ -3712,7 +3712,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=251270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=251270"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3730,7 +3730,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=033780" class="tltle">KT&G</a></td>
 					<td class="number">83,300</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				400
 				</span>
 			</td>
@@ -3789,7 +3789,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=033780"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=033780"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3803,7 +3803,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=010950" class="tltle">S-Oil</a></td>
 					<td class="number">97,400</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				1,400
 				</span>
 			</td>
@@ -3862,7 +3862,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=010950"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=010950"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3873,10 +3873,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">38</td>
-					<td><a href="/item/main.nhn?code=034020" class="tltle">�λ��߰���</a></td>
+					<td><a href="/item/main.nhn?code=034020" class="tltle">두산중공업</a></td>
 					<td class="number">24,800</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				300
 				</span>
 			</td>
@@ -3935,7 +3935,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=034020"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=034020"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -3946,10 +3946,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">39</td>
-					<td><a href="/item/main.nhn?code=003490" class="tltle">�����װ�</a></td>
+					<td><a href="/item/main.nhn?code=003490" class="tltle">대한항공</a></td>
 					<td class="number">30,350</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				550
 				</span>
 			</td>
@@ -4008,7 +4008,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=003490"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=003490"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4019,10 +4019,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">40</td>
-					<td><a href="/item/main.nhn?code=000810" class="tltle">�Ｚȭ��</a></td>
+					<td><a href="/item/main.nhn?code=000810" class="tltle">삼성화재</a></td>
 					<td class="number">218,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				3,500
 				</span>
 			</td>
@@ -4081,7 +4081,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=000810"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=000810"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4096,7 +4096,7 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">41</td>
-					<td><a href="/item/main.nhn?code=326030" class="tltle">SK���̿���</a></td>
+					<td><a href="/item/main.nhn?code=326030" class="tltle">SK바이오팜</a></td>
 					<td class="number">125,500</td>
 					<td class="number">
 				<span class="tah p11">0</span>
@@ -4154,7 +4154,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=326030"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=326030"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4165,10 +4165,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">42</td>
-					<td><a href="/item/main.nhn?code=011170" class="tltle">�Ե��ɹ�Į</a></td>
+					<td><a href="/item/main.nhn?code=011170" class="tltle">롯데케미칼</a></td>
 					<td class="number">273,500</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				3,500
 				</span>
 			</td>
@@ -4227,7 +4227,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=011170"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=011170"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4238,10 +4238,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">43</td>
-					<td><a href="/item/main.nhn?code=010130" class="tltle">�����ƿ�</a></td>
+					<td><a href="/item/main.nhn?code=010130" class="tltle">고려아연</a></td>
 					<td class="number">473,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				16,000
 				</span>
 			</td>
@@ -4300,7 +4300,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=010130"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=010130"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4314,7 +4314,7 @@ function fieldDefault() {
 					<td><a href="/item/main.nhn?code=030200" class="tltle">KT</a></td>
 					<td class="number">33,350</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="���"><span class="tah p11 red02">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_up.gif" width="7" height="6" style="margin-right:4px;" alt="상승"><span class="tah p11 red02">
 				300
 				</span>
 			</td>
@@ -4373,7 +4373,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=030200"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=030200"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4384,10 +4384,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">45</td>
-					<td><a href="/item/main.nhn?code=009540" class="tltle">�ѱ������ؾ�</a></td>
+					<td><a href="/item/main.nhn?code=009540" class="tltle">한국조선해양</a></td>
 					<td class="number">123,000</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				3,000
 				</span>
 			</td>
@@ -4446,7 +4446,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=009540"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=009540"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4461,10 +4461,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">46</td>
-					<td><a href="/item/main.nhn?code=018880" class="tltle">�ѿ½ý���</a></td>
+					<td><a href="/item/main.nhn?code=018880" class="tltle">한온시스템</a></td>
 					<td class="number">15,950</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				300
 				</span>
 			</td>
@@ -4523,7 +4523,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=018880"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=018880"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4534,10 +4534,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">47</td>
-					<td><a href="/item/main.nhn?code=316140" class="tltle">�츮��������</a></td>
+					<td><a href="/item/main.nhn?code=316140" class="tltle">우리금융지주</a></td>
 					<td class="number">11,300</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				50
 				</span>
 			</td>
@@ -4596,7 +4596,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=316140"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=316140"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4607,10 +4607,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">48</td>
-					<td><a href="/item/main.nhn?code=034220" class="tltle">LG���÷���</a></td>
+					<td><a href="/item/main.nhn?code=034220" class="tltle">LG디스플레이</a></td>
 					<td class="number">22,800</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				450
 				</span>
 			</td>
@@ -4669,7 +4669,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=034220"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=034220"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4680,10 +4680,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">49</td>
-					<td><a href="/item/main.nhn?code=009830" class="tltle">��ȭ�ַ��</a></td>
+					<td><a href="/item/main.nhn?code=009830" class="tltle">한화솔루션</a></td>
 					<td class="number">42,250</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				600
 				</span>
 			</td>
@@ -4742,7 +4742,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=009830"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=009830"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4753,10 +4753,10 @@ function fieldDefault() {
 
 				<tr  onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 					<td class="no">50</td>
-					<td><a href="/item/main.nhn?code=024110" class="tltle">�������</a></td>
+					<td><a href="/item/main.nhn?code=024110" class="tltle">기업은행</a></td>
 					<td class="number">10,300</td>
 					<td class="number">
-				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="�϶�"><span class="tah p11 nv01">
+				<img src="https://ssl.pstatic.net/imgstock/images/images4/ico_down.gif" width="7" height="6" style="margin-right:4px;" alt="하락"><span class="tah p11 nv01">
 				150
 				</span>
 			</td>
@@ -4815,7 +4815,7 @@ function fieldDefault() {
 			
 		
 	
-					<td class="center"><a href="/item/board.nhn?code=024110"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="��н�"></a></td>
+					<td class="center"><a href="/item/board.nhn?code=024110"><img src="https://ssl.pstatic.net/imgstock/images5/ico_debatebl2.gif" width="15" height="13" alt="토론실"></a></td>
 				</tr>
 			
 	
@@ -4831,8 +4831,8 @@ function fieldDefault() {
 
 				</tbody>
 				</table>
-				<table summary="������ �׺���̼� ����Ʈ" class="Nnavi" align="center">
-				<caption>������ �׺���̼�</caption>
+				<table summary="페이지 네비게이션 리스트" class="Nnavi" align="center">
+				<caption>페이지 네비게이션</caption>
 				<tr>		
 					
 					
@@ -4870,12 +4870,12 @@ function fieldDefault() {
 
 					<td class="pgR">
 				<a href="/sise/sise_market_sum.nhn?&amp;page=11"  >
-				����<img src="https://ssl.pstatic.net/static/n/cmn/bu_pgarR.gif" width="3" height="5" alt="" border="0">
+				다음<img src="https://ssl.pstatic.net/static/n/cmn/bu_pgarR.gif" width="3" height="5" alt="" border="0">
 				</a>
 				</td>
 
 					<td class="pgRR">
-				<a href="/sise/sise_market_sum.nhn?&amp;page=32"  >�ǵ�
+				<a href="/sise/sise_market_sum.nhn?&amp;page=32"  >맨뒤
 				<img src="https://ssl.pstatic.net/static/n/cmn/bu_pgarRR.gif" width="8" height="5" alt="" border="0">
 				</a>
 				</td>
@@ -4884,8 +4884,8 @@ function fieldDefault() {
 				</tr>
 				</table>
 			</div>
-			<!-- // ���� -->
-			<!-- //������ -->
+			<!-- // 종목 -->
+			<!-- //컨텐츠 -->
 		</div>
 	</div>
 
@@ -4904,30 +4904,30 @@ function fieldDefault() {
 	<div id="footer">
 		<ul>
 			<li class="first">
-				<a href="https://www.naver.com/rules/service.html" onClick="clickcr(this, 'fot.service', '', '', event);" target="_blank">�̿���</a>
+				<a href="https://www.naver.com/rules/service.html" onClick="clickcr(this, 'fot.service', '', '', event);" target="_blank">이용약관</a>
 			</li>
 			<li>
-				<a href="https://finance.naver.com/rules.nhn" onClick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">�����Խ��� ���Ģ</a>
+				<a href="https://finance.naver.com/rules.nhn" onClick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">금융게시판 운영원칙</a>
 			</li>
 			<li>
-				<a href="https://www.naver.com/rules/privacy.html" onClick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>��������ó����ħ</strong></a>
+				<a href="https://www.naver.com/rules/privacy.html" onClick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>개인정보처리방침</strong></a>
 			</li>
 			<li>
-				<a href="https://www.naver.com/rules/disclaimer.html" onClick="clickcr(this, 'fot.limit', '', '', event);" target="_blank">å���� �Ѱ�� ��������</a>
+				<a href="https://www.naver.com/rules/disclaimer.html" onClick="clickcr(this, 'fot.limit', '', '', event);" target="_blank">책임의 한계와 법적고지</a>
 			</li>
 			<li>
-				<a href="https://help.naver.com/support/alias/contents2/finance/finance_1.naver" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">���� ��������</a>
+				<a href="https://help.naver.com/support/alias/contents2/finance/finance_1.naver" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">금융 고객센터</a>
 			</li>
 		</ul>
-		<p class="desc">���̹�(��)�� �����ϴ� ���� ������ �� ������ ������ü<a href="javascript:;" onclick="togglePanelFooter('footerPanel0');" class="desc_help"><img src="https://ssl.pstatic.net/static/nfinance/2018/06/29/btn_help.png" width="17" height="17" alt="������ü �󼼼���"></a>�κ��� �޴� ���� ���������̸�, ������ �߻��ϰų� ������ �� �ֽ��ϴ�.<br>���̹�(��)�� ������ ������ü�� ������ ������ ���� ���� ����� ������ å���� ���� �ʽ��ϴ�. �Խõ� ������ �������� ������ �� �����ϴ�.</p>
+		<p class="desc">네이버(주)가 제공하는 금융 정보는 각 콘텐츠 제공업체<a href="javascript:;" onclick="togglePanelFooter('footerPanel0');" class="desc_help"><img src="https://ssl.pstatic.net/static/nfinance/2018/06/29/btn_help.png" width="17" height="17" alt="제공업체 상세설명"></a>로부터 받는 투자 참고사항이며, 오류가 발생하거나 지연될 수 있습니다.<br>네이버(주)와 콘텐츠 제공업체는 제공된 정보에 의한 투자 결과에 법적인 책임을 지지 않습니다. 게시된 정보는 무단으로 배포할 수 없습니다.</p>
 		<div id="footerPanel0" class="provider_layer" style="display:none" tabindex="0" onblur="hidePannel('footerPanel0')">
-			<strong class="provider_layer__tit">������ ������ü</strong>
+			<strong class="provider_layer__tit">콘텐츠 제공업체</strong>
 			<div class="provider_layer__txt">
-				<p><span>�ڽ��� : </span>�ǽð� �ְ����� �� �����ü�����</p>
-				<p><span>�����ذ��̵� : </span>��� �� �繫����</p>
-				<p><span>KG������ : </span>�ؿ� �ü�, ������ǥ �� �ݵ� ����</p>
-				<p><span>�ѱ���Ź������ : </span>������ȸ�� �� ������ǥ ����</p>
-				<p><span>������Ź : </span>���� �׸� ����</p>
+				<p><span>코스콤 : </span>실시간 주가정보 및 국내시세정보</p>
+				<p><span>에프앤가이드 : </span>기업 및 재무정보</p>
+				<p><span>KG제로인 : </span>해외 시세, 시장지표 및 펀드 정보</p>
+				<p><span>한국예탁결제원 : </span>주주총회일 및 전자투표 정보</p>
+				<p><span>인포스탁 : </span>국내 테마 정보</p>
 			</div>
 			<span class="arrow"></span>
 		</div>
