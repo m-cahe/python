@@ -3,6 +3,15 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def getDataOfParam(param):
+    sub_tbody = sub_soup.find('table',attrs={"class":"tb_type1 tb_num tb_type1_ifrs"}).find('tbody')
+    sub_title = sub_tbody.find('th',attr={"class":param}).get_text().strip()
+    dataOfParam = sub_tbody.find('th', attr={"class":param}).parent.find_all('td')
+    value_param = [i.get_text().strip() for i in dataOfParam]
+    print(sub_title, ":",value_param)
+    
+    return value_param
+
 
 url = "https://finance.naver.com/sise/sise_market_sum.nhn"
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'}
@@ -37,15 +46,7 @@ for index, stock in enumerate(stockTop50_crop):
 
 ParamList = ['매출액','영업이익','당기순이익','ROE(지배주주)','PER(배)','PBR(배)']
 for idx, pText in enumerate(ParamList):
-    params="".json(sub_soup.find('strong',text=pText).parent['class'])
+    param="".json(sub_soup.find('strong',text=pText).parent['class'])      #ParamList가 '영업이익' 일때, pText도 '영업이익이면'
     getDataOfParam(param)
 
 
-def getDataOfParam(param):
-    sub_tbody = sub_soup.find('table',attrs={"class":"tb_type1 tb_num tb_type1_ifrs"}).find('tbody')
-    sub_title = sub_tbody.find('th',attr={"class":param}).get_text().strip()
-    dataOfParam = sub_tbody.find('th', attr={"class":param}).parent.find_all('td')
-    value_param = [i.get_text().strip() for i in dataOfParam]
-    print(sub_title, ":",value_param)
-    
-    return value_param
