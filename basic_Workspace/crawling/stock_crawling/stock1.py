@@ -26,3 +26,26 @@ stock_list = soup.find('table',attrs={"class":"type_2"}).find('tbody').find_all(
 for stock in stock_list:
     if len(stock)>1:
         print(stock.get_text().split())   #split() : 입력받은 문자를 기준으로 배열에 저장하여 RETURN 배열
+
+stockTop50_crop = soup.find('table',attrs={"class":"type_2"}).find('tbody').find_all('a',attrs={"class":"tltle"})
+print(stockTop50_crop)
+for index, stock in enumerate(stockTop50_crop):
+    link="https://finance.naver.com/"+stock["href"]
+    sub_res = requests.get(link)
+    sub_resp = sub_res.content.decode('euc-kr','replace')
+    sub_soup = BeautifulSoup(sub_resp,'html.parser')
+
+ParamList = ['매출액','영업이익','당기순이익','ROE(지배주주)','PER(배)','PBR(배)']
+for idx, pText in enumerate(ParamList):
+    params="".json(sub_soup.find('strong',text=pText).parent['class'])
+    getDataOfParam(param)
+
+
+def getDataOfParam(param):
+    sub_tbody = sub_soup.find('table',attrs={"class":"tb_type1 tb_num tb_type1_ifrs"}).find('tbody')
+    sub_title = sub_tbody.find('th',attr={"class":param}).get_text().strip()
+    dataOfParam = sub_tbody.find('th', attr={"class":param}).parent.find_all('td')
+    value_param = [i.get_text().strip() for i in dataOfParam]
+    print(sub_title, ":",value_param)
+    
+    return value_param
