@@ -37,12 +37,10 @@ for index, stock in enumerate(stockTop50_crop):
 
 ##function getDataOfParam()
 def getDataOfParam(param):
-    par =  "\'"+param+"\'"
-    print(par)
+    print(param)
     sub_tbody = sub_soup.find("table", "tb_type1 tb_num tb_type1_ifrs").find('tbody')
-    print(sub_tbody.find('th'))
-    sub_title = sub_tbody.find('th',par).find('strong')
-    dataOfParam = sub_tbody.find('th',par)
+    sub_title = sub_tbody.find('th',param).find('strong').get_text()
+    dataOfParam = sub_tbody.find('th',param).parent.find_all('td')          #sub_tbody.find('th',param)의 부모클래스의 td받아오기
     value_param = [i.get_text().strip() for i in dataOfParam]
     print(sub_title, ":",value_param)
     return value_param
@@ -50,10 +48,11 @@ def getDataOfParam(param):
 
 ParamList = ['매출액','영업이익','당기순이익','ROE(지배주주)','PER(배)','PBR(배)']
 for idx, pText in enumerate(ParamList):
-    param="".join(sub_soup.find('strong',text=pText).parent['class'])      #ParamList가 '영업이익' 일때, pText도 '영업이익이면' list형태로 출력
-    getDataOfParam(param)
+    param=' '.join(sub_soup.find('strong',text=pText).parent['class'])      #ParamList가 '영업이익' 일때, pText도 '영업이익이면' list형태로 출력
+    getDataOfParam(param)   #param (h_th2 th_cop_anal9 -> h_th2th_cop_anal9로 띄어쓰기 생략)
 
-
-
-
+#split() : 구분자 문자열을 기준으로 분리, split(): 공백기준 / split('.'): .을 기준
+#join() : '공백을 기준으로 문자열 연결'  # ',' 쉼표를 기준으로 문자열 연결 / # ' '.join 띄어쓰기를 기준으로 문자열 연결
+#get_text() 
+#find('dom','class') or #find('dom', attrs={"class":"class_name"})
 
