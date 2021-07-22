@@ -37,11 +37,12 @@ for index, stock in enumerate(stockTop50_crop):
 
 ##function getDataOfParam()
 def getDataOfParam(param):
-    par =  "\""+param+"\""
-    sub_tbody = sub_soup.find("table", attrs={"class": "tb_type1 tb_num tb_type1_ifrs"}).find('tbody')
-    sub_title = sub_tbody.find('th',par)
-    print(sub_title)
-    dataOfParam = sub_tbody.find('th', par).parent.find_all('td')
+    par =  "\'"+param+"\'"
+    print(par)
+    sub_tbody = sub_soup.find("table", "tb_type1 tb_num tb_type1_ifrs").find('tbody')
+    print(sub_tbody.find('th'))
+    sub_title = sub_tbody.find('th',par).find('strong')
+    dataOfParam = sub_tbody.find('th',par)
     value_param = [i.get_text().strip() for i in dataOfParam]
     print(sub_title, ":",value_param)
     return value_param
