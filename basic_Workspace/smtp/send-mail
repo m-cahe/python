@@ -1,0 +1,25 @@
+import smtplib
+from email.message import EmailMessage    #MIME(HEADER추가시: Subject, From, To)
+
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 465
+
+myID = "####@gmail.com"
+myPW = "#####"
+toID = "****@gmail.com"
+
+message = EmailMessage()
+message.set_content("메일의 내용입니다.")
+
+
+message["Subject"] = "메일의 제목입니다."
+message["From"] = myID
+message["To"] = toID
+
+# smtp.quit()     
+with open("codelion.png","rb") as image:    #with .. as 추가로 자동종료
+    image_file = image.read()
+
+smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
+smtp.login(myID,myPW)
+smtp.send_message(message)
