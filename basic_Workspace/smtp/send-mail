@@ -1,5 +1,7 @@
 import smtplib
-from email.message import EmailMessage    #MIME(HEADER추가시: Subject, From, To)
+from email.message import EmailMessage              #MIME(HEADER추가시: Subject, From, To)
+import imghdr
+import re
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
@@ -8,18 +10,28 @@ myID = "####@gmail.com"
 myPW = "#####"
 toID = "****@gmail.com"
 
+def sendEmail(addr):
+    reg = "^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$"          #정규표현식
+    if bool(re.match(reg,addr)):                                    #None일때 false
+        smtp.send_message(message)
+        print("정상적으로 메일이 발송되었습니다.")
+    else:
+        print("유효한 이메일 주소가 아닙니다.")
+
 message = EmailMessage()
-message.set_content("메일의 내용입니다.")
+message.set_content("이메일 내용입니다.")
 
-
-message["Subject"] = "메일의 제목입니다."
+message["Subject"] = "이메일 제목입니다."                           
 message["From"] = myID
 message["To"] = toID
 
-# smtp.quit()     
-with open("codelion.png","rb") as image:    #with .. as 추가로 자동종료
+with open("codelion.png","rb") as image:                               #with .. as 추가로 자동종료
     image_file = image.read()
 
+image_type = imghdr.what('Lion',image_file)                             #imghdr.what() -> 확장자
+message.add_attachment(image_file,maintype='image',subtype=image_type)  
+
 smtp = smtplib.SMTP_SSL(SMTP_SERVER,SMTP_PORT)
-smtp.login(myID,myPW)
-smtp.send_message(message)
+smtp.login(myID,myPW)                                                   # 메일을 보내는 sendEmail 함수를 호출해서 실행해보기
+sendEmail("myId")
+smtp.quit()
