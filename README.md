@@ -1,5 +1,4 @@
-# python
-basic level of Python 
+# python 
 
 1. basic_Workspace
 
