@@ -1,0 +1,9 @@
+{
+    "python.testing.nosetestArgs": [
+        "."
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": true,
+    "python.pythonPath": "/opt/anaconda3/bin/python"
+}
