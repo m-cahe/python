@@ -8,3 +8,8 @@
 #### rest_api.ipynb
 - Rest API 이해
 - 테스트 도구 httpie 설치
+
+#### project_training
+- python 3.8.8
+- vs code 이용
+- 웹페이지 만들기 위한 실습 (html, rest api)
