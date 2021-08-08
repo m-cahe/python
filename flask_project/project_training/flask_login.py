@@ -11,14 +11,11 @@ log_fail = {"login":"fail"}
 def id_chk(data):
     reg = "^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$"      #유효성검사
     if bool(re.match(reg, data)):   
-        if data == "m@naver.com":
-            print("아이디일치")
+        if data == "idid@google.com":
             return True
         else:
-            print("아이디가 일치하지 않습니다")
             return False
     else:
-        print('id는 이메일 형식으로 입력해주세요') 
         return False
 
 
