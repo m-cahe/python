@@ -41,6 +41,9 @@
   <form method="get" action="/signin">
     <img class="mb-4" src="static/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    {% for index in range(values|length) %}       <!--jinja2 사용해 변수_사용법 : {%코드%}  {{변수명}}-->
+    <p>{{loop.index}}. {{values[index]}}</p>      
+    {% endfor %}
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="id">
