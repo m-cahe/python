@@ -2,7 +2,7 @@ from logging import debug
 from flask import Flask, jsonify, request, render_template
 import re
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')    #static_url_path : 선행경로를 제거
 
 log_succ = {"login":"success"}
 log_fail = {"login":"fail"}
@@ -26,7 +26,7 @@ def pw_chk(data):
         print("비밀번호가 일치하지 않습니다")
         return False
 
-@app.route("/login")
+@app.route("/signin")
 def login():
     id = request.args.get('id')
     pw = request.args.get('pw')
@@ -39,7 +39,7 @@ def login():
 
 @app.route("/")
 def basic():    
-    return render_template('login.html')
+    return render_template('sign_in.html')
 
 
 if __name__ == '__main__':
