@@ -26,20 +26,22 @@ def pw_chk(data):
         print("비밀번호가 일치하지 않습니다")
         return False
 
+
+
 @app.route("/signin")
 def login():
     id = request.args.get('id')
     pw = request.args.get('pw')
     print("id = ", id, "pw = ", pw)
-    
     if (id_chk(id) == True) and (pw_chk(pw)==True):
         return jsonify(log_succ)
     else:
         return jsonify(log_fail)
 
+greet = ["안녕하세요","반갑습니다"]
 @app.route("/")
 def basic():    
-    return render_template('sign_in.html')
+    return render_template('sign_in.html', values = greet)      ##greet를 변수 values로 저장해 전달
 
 
 if __name__ == '__main__':
