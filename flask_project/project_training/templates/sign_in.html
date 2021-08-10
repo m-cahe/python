@@ -13,7 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="static/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style>
       .bd-placeholder-img {
@@ -33,17 +33,16 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="static/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
     
 <main class="form-signin">
-  <form method="get" action="/signin">
-    <img class="mb-4" src="static/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+  <form method="get" action="/signin">ß
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-    {% for index in range(values|length) %}       <!--jinja2 사용해 변수_사용법 : {%코드%}  {{변수명}}-->
-    <p>{{loop.index}}. {{values[index]}}</p>      
-    {% endfor %}
+    
+    <div id="axios_btn">
+    <button type="button" class="btn btn-secondary" v-on:click="test_click">POST</button>
+    </div>
 
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="id">
@@ -61,9 +60,51 @@
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+
   </form>
 </main>
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+  <!--Axios 코드추가(통신을 위한): node.js 없이도 http 프로토콜 이용해 웹브라우저와 다른 시스템간의 통신 가능-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+      const app = new Vue({
+        el: '#axios_btn',
+        methods:{
+          test_click(){
+            axios("http://localhost:8080/btn",{   //http://localhost:5500 에서 http://localhost:8080/btn 호출
+            method:"get",
+            })
+            .then((response) =>{
+              console.log(response.data)
+            })
+            .catch((error) => {
+              console.log(error)
+            });
+          },
+        },
+      });
+  </script>
 
     
   </body>

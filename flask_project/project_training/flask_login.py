@@ -1,8 +1,10 @@
 from logging import debug
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, make_response
 import re
+from flask_cors import CORS
 
 app = Flask(__name__, static_url_path='/static')    #static_url_path : 선행경로를 제거
+CORS(app)               # 보안개념: 다른 웹주소 간 통신 가능 
 
 log_succ = {"login":"success"}
 log_fail = {"login":"fail"}
@@ -26,7 +28,9 @@ def pw_chk(data):
         print("비밀번호가 일치하지 않습니다")
         return False
 
-
+@app.route("/btn")
+def btn_click():
+    return make_response(jsonify(success=True), 200)     #response반환
 
 @app.route("/signin")
 def login():
