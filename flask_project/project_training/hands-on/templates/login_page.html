@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>login</title>
+    <style>
+        .form-floating mb-3{
+            max-width: 500px;
+        }
+        .form-floating{
+            max-width: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <center>
+    <h1 style="margin-top: 150px; margin-bottom: 20px;">login</h1>
+
+    <form method="POST" >
+        <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="id">
+        <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pw">
+        <label for="floatingPassword">Password</label>
+        </div>
+
+        <input style="margin-top: 10px;" class="btn btn-primary btn-lg" type="submit" value="로그인">
+    </form>
+    </center>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <!-- vue / axios -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        document.querySelector('form').addEventListener('submit', (e) => { 
+          e.preventDefault(); //submit의 기능을 중단
+
+          id=document.getElementById("floatingInput").value
+          pw=document.getElementById("floatingPassword").value
+
+          let params = new FormData()       //Form방식은 form으로 넘겨주기!!
+          params.append('id', this.id)
+          params.append('pw', this.pw)
+          //params = {idid: id, pwpw: pw}
+
+          axios({
+            method: 'post'
+            , url: 'http://127.0.0.1:8080/login'
+            , data: params
+          })
+          .then(response =>{
+            console.log(response)
+            console.log(response.data["login"]) //data: {"login":"success", "login":"false"}
+            if (response.data["login"] == "success")
+                window.location.assign("http://127.0.0.1:5500/templates/login_succ.html")  
+            else
+                alert("입력하신 아이디가 유효하지 않습니다.")
+            }).catch(error =>{
+            console.log('failed', error)
+          });
+        });
+    </script>
+    
+  </body>
+</html>
