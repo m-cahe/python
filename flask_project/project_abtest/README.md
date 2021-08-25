@@ -17,10 +17,9 @@
 ### 4. control > user_manage
  - mysql
  - @staticmethod
-    - User클래스 
-    - @staticmethod
-     - CRUD
-     -  mysql_db = conn_mysqldb() <br>
+    - User클래스
+    - @staticmethod : CRUD <br>
+        mysql_db = conn_mysqldb() <br>
         db_cursor = mysql_db.cursor() <br>
         sql = "sql문" <br>
         db_cursor.execute(sql) <br>
