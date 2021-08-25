@@ -7,12 +7,12 @@
  - app.before_request 
 
 ### view > blog.py
-  - /set_page
-     - /set_email
+  - ../set_page
+     - ../set_email
        - request.form['user_id'], request.form['user_email']  --> mysql 에 insert
        - login_user
      - session저장, 세션 불러온 후 페이지 리턴
-  - /logout
+  - ../logout
      - logout_user()
-  - /deletelog
+  - ../deletelog
      -  mysqld이용 delete  
