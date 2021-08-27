@@ -42,27 +42,32 @@
     <a class="py-2" href="#" aria-label="Product">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
     </a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
+
     <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
+    <!--
+    <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
     <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+    -->
   </nav>
 </header>
 
 <main>
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">A PAGE</h1>
+      <h4> 저희 샤인을 다시 선택해주셔서 감사해요 </h4>
+      <h1 class="display-4 fw-normal">샤인머스캣</h1>
+      <p></p>
       <p class="lead fw-normal">
       {% if user_email != null %}
         {{user_email}}님이 구독중입니다.</br></br>
         <a type="button" href="/blog/logout" class="btn btn-info">로그아웃</a>
         <a type="button" href="/blog/deletelog" class="btn btn-warning">구독 취소</a>
       {% else %}
-        이메일을 남겨주시면, 연재시 메일로 송부드립니다
+        <!--이메일을 남겨주시면, 연재시 메일로 송부드립니다-->
             <!--form-->
             <form method="POST" action="set_email"> 
               <div class="row g-3 align-items-center">
@@ -89,15 +94,14 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
+        <h2 class="display-5">About Product</h2>
       </div>
       <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
+        <p><h3>최상의 품질</h3><h2 class="display-5">5kg</h2>선물용으로 적합해요</p>
+        
       </div>
       <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
@@ -106,53 +110,20 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
+        <p class="lead">최상의 맛, 가장 맛있는 크기</br>가족들과 샤인의 향을 나눠요</p>
+        <h2 class="display-5">3kg</h2>
       </div>
       <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
     <div class="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
+        <p class="lead">한 알을 먹더라도</br>맛있는 샤인머스캣을 먹고 싶은</br> 당신을 위해</p>
+        <h2 class="display-5">1kg</h2>
       </div>
       <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
   </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Another headline</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-  </div>
 </main>
 
 <footer class="container py-5">
@@ -161,6 +132,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
       <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
     </div>
+    <!--
     <div class="col-6 col-md">
       <h5>Features</h5>
       <ul class="list-unstyled text-small">
@@ -172,31 +144,33 @@
         <li><a class="link-secondary" href="#">Last time</a></li>
       </ul>
     </div>
+    -->
     <div class="col-6 col-md">
-      <h5>Resources</h5>
+      <h5>판매문의</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Resource name</a></li>
-        <li><a class="link-secondary" href="#">Resource</a></li>
-        <li><a class="link-secondary" href="#">Another resource</a></li>
-        <li><a class="link-secondary" href="#">Final resource</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Business</a></li>
-        <li><a class="link-secondary" href="#">Education</a></li>
+        <li><a class="link-secondary" href="#">인스타그램</a></li>
+        <li><a class="link-secondary" href="#">카카오톡</a></li>
+        <!--
         <li><a class="link-secondary" href="#">Government</a></li>
         <li><a class="link-secondary" href="#">Gaming</a></li>
+        -->
       </ul>
     </div>
     <div class="col-6 col-md">
-      <h5>About</h5>
+      <h5>은자네 농장</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Team</a></li>
+        <li><a class="link-secondary" href="#">문의처: 010-5129-4355</a></li>
+        <!--
         <li><a class="link-secondary" href="#">Locations</a></li>
         <li><a class="link-secondary" href="#">Privacy</a></li>
         <li><a class="link-secondary" href="#">Terms</a></li>
+        -->
+      </ul>
+    </div>
+      <div class="col-6 col-md">
+      <h5>복숭아</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Resource name</a></li>
       </ul>
     </div>
   </div>
