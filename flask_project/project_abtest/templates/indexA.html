@@ -29,6 +29,10 @@
           font-size: 3.5rem;
         }
       }
+
+      .rounded{
+        border-radius:30px;
+      }
     </style>
 
     
@@ -56,19 +60,25 @@
 </header>
 
 <main>
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" style="background-color:#fffff">
+      <h1 style="color:#b9d84e">Shine Masket</h1>
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h4> 저희 샤인을 다시 선택해주셔서 감사해요 </h4>
-      <h1 class="display-4 fw-normal">샤인머스캣</h1>
-      <p></p>
+    <div class="text-center">
+      <img src="/static/assets/photo/shine2.png" class="rounded" width="300" height="300" border-radius: 30px;>
+    </div>
+    </div>
+      <!--
+
       <p class="lead fw-normal">
       {% if user_email != null %}
         {{user_email}}님이 구독중입니다.</br></br>
         <a type="button" href="/blog/logout" class="btn btn-info">로그아웃</a>
         <a type="button" href="/blog/deletelog" class="btn btn-warning">구독 취소</a>
       {% else %}
+      -->
         <!--이메일을 남겨주시면, 연재시 메일로 송부드립니다-->
             <!--form-->
+      <!--
             <form method="POST" action="set_email"> 
               <div class="row g-3 align-items-center">
                 <div class="col-auto" style="align-items: center;">
@@ -82,25 +92,29 @@
           </form>
       {% endif %}
       </p>
+      -->
           <!--form-->
+      
     </div>
 
 
-
+  <!--
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  -->
+  
   </div>
 
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-5">About Product</h2>
+        <h2 >About Product</h2>
       </div>
       <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <p><h3>최상의 품질</h3><h2 class="display-5">5kg</h2>선물용으로 적합해요</p>
+        <p class="display-5"><h3>최상의 품질</h3><h2 class="display-5">5kg</h2>선물용으로 적합해요</p>
         
       </div>
       <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
@@ -157,9 +171,9 @@
       </ul>
     </div>
     <div class="col-6 col-md">
-      <h5>은자네 농장</h5>
+      <h5>ㅅㅑ이ㄴ네 농장</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">문의처: 010-5129-4355</a></li>
+        <li><a class="link-secondary" href="#">문의처: 010-0000-0000</a></li>
         <!--
         <li><a class="link-secondary" href="#">Locations</a></li>
         <li><a class="link-secondary" href="#">Privacy</a></li>
